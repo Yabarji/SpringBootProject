@@ -4,6 +4,8 @@ package org.o7planning.thymeleaf;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -23,8 +25,12 @@ public class EmployeeControllerTest {
     @Test
     public void testGetEmployees() throws Exception {
         mockMvc.perform(get("/employees"))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$[0].firstName").value("Laurent"));
+        .andExpect(status().isOk())
+        .andDo(print())
+        .andExpect(content().contentType("application/json"));
+        /*.andExpect(jsonPath("$[0].firstName").value("1"));*/
     }
 
 }
+
+
