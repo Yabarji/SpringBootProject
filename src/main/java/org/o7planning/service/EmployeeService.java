@@ -4,8 +4,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.o7planning.Model.Employee;
-import org.o7planning.Repository.EmployeeRepository;
+import org.o7planning.model.Employee;
+import org.o7planning.repository.EmployeeRepository;
 
 import lombok.Data;
 

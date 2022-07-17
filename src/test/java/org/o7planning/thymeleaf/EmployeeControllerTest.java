@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -28,7 +29,8 @@ public class EmployeeControllerTest {
         .andExpect(status().isOk())
         .andDo(print())
         .andExpect(content().contentType("application/json"));
-        /*.andExpect(jsonPath("$[0].firstName").value("1"));*/
+        /*.andExpect(jsonPath("$[0].firstName", is("Laurent")))
+        .andExpect(MockMvcResultMatchers.jsonPath("$[].firstName").value("Laurent"));*/
     }
 
 }

@@ -1,4 +1,4 @@
-package  org.o7planning.Model;
+package  org.o7planning.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,10 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
 @Entity
 @Table(name = "employees")
+
+@Getter
+@Setter
+
 public class Employee {
 
 	

@@ -1,12 +1,11 @@
-package  org.o7planning.Controller;
+package  org.o7planning.controller;
 
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import org.o7planning.Model.Employee;
+import org.o7planning.model.Employee;
 import org.o7planning.service.EmployeeService;
 
 @RestController
